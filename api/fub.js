@@ -21,14 +21,13 @@ export default async function handler(req, res) {
   }
 
   // Build person payload according to Follow Up Boss API expectations.
-  // If you need different fields or to create a Lead instead, edit this code.
+  // Follow Up Boss does not accept `notes` inside the person create payload.
+  // We'll create the person first, then create a separate note via /v1/notes.
   const payload = {
     firstName: firstName || undefined,
     lastName: lastName || undefined,
     emails: email ? [{ value: email, type: 'home' }] : undefined,
     phones: phone ? [{ value: phone, type: 'mobile' }] : undefined,
-    // Add a note with the comments and source
-    notes: comments ? [{ text: `Website contact form:\n${comments}` }] : undefined,
     // Optional custom source/tag to help identify origin in Follow Up Boss
     source: 'Website - 1428 Brickell'
   };
@@ -58,7 +57,37 @@ export default async function handler(req, res) {
       return res.status(resp.status).json({ error: 'FUB API error', details: data });
     }
 
-    // Optionally you can create a lead or add tags here using other FUB endpoints.
+    // Person created (or found). Now, if comments were provided, create a note.
+    // Determine personId from response
+    let personId = null;
+    if (data && data.id) personId = data.id;
+    else if (data && data.personId) personId = data.personId;
+    else if (data && data.person && data.person.id) personId = data.person.id;
+
+    if (comments && personId) {
+      const notePayload = { personId: personId, text: `Website contact form:\n${comments}` };
+      console.log('Creating FUB note payload:', notePayload);
+      try {
+        const noteResp = await fetch('https://api.followupboss.com/v1/notes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': auth
+          },
+          body: JSON.stringify(notePayload)
+        });
+        const noteData = await noteResp.json().catch(() => ({}));
+        console.log('FUB note response status:', noteResp.status);
+        console.log('FUB note response body:', noteData);
+        if (!noteResp.ok) {
+          // Return person creation success but note creation error details
+          return res.status(200).json({ success: true, fub: data, noteError: { status: noteResp.status, details: noteData } });
+        }
+      } catch (err) {
+        console.log('FUB note creation error:', String(err));
+        return res.status(200).json({ success: true, fub: data, noteError: String(err) });
+      }
+    }
 
     return res.status(200).json({ success: true, fub: data });
   } catch (err) {

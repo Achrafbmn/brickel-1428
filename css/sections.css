@@ -26,7 +26,7 @@
 }
 
 .hero__title-top {
-  font-family: var(--font-serif);
+  font-family: "LapidaryRoman", var(--font-serif);
   font-size: clamp(1rem, 2vw, 1.25rem);
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -48,7 +48,7 @@
 }
 
 .hero__tagline {
-  font-family: var(--font-serif);
+  font-family: "LapidaryRoman", var(--font-serif);
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-style: italic;
   margin-bottom: 2.5rem;

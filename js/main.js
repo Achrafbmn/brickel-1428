@@ -21,15 +21,13 @@
       var labels = {
         brochure: "Brochure",
         "fact-sheet": "Fact Sheet",
-        "floor-plans": "Floor Plans",
-        "price-sheet": "Price Sheet"
+        "floor-plans": "Floor Plans"
       };
       // Map download types to PDF URLs (relative to site root)
       var urls = {
         brochure: "src/1428-Brickell-Brochure-68b8d620120fc.pdf",
         "fact-sheet": "src/1428_Mini Booklet Fact Sheet-68b71bbe8e4b1.pdf",
-        "floor-plans": "src/floorplans all-68b71b5d49d5c.pdf",
-        "price-sheet": "src/price-sheet.pdf"
+        "floor-plans": "src/floorplans all-68b71b5d49d5c.pdf"
       };
 
       var url = urls[type];

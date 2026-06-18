@@ -58,6 +58,7 @@
 
   function updateClock() {
     if (!timeEl) return;
+    // Show time for Miami (Eastern Time) regardless of user's local timezone
     var now = new Date();
     var options = {
       hour: "numeric",
@@ -65,22 +66,36 @@
       hour12: true,
       month: "short",
       day: "numeric",
-      year: "numeric"
+      year: "numeric",
+      timeZone: "America/New_York"
     };
-    timeEl.textContent = now.toLocaleString("en-US", options);
+    try {
+      timeEl.textContent = new Intl.DateTimeFormat("en-US", options).format(now) + " ET";
+    } catch (e) {
+      // Fallback to local formatting if Intl API fails
+      timeEl.textContent = now.toLocaleString("en-US", options);
+    }
   }
 
   function fetchWeather() {
     if (!tempEl) return;
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=25.7617&longitude=-80.1918&current=temperature_2m&temperature_unit=celsius")
+    // Request Miami current temperature in Fahrenheit
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=25.7617&longitude=-80.1918&current_weather=true&temperature_unit=fahrenheit&hourly=temperature_2m")
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        if (data.current && data.current.temperature_2m != null) {
-          tempEl.textContent = Math.round(data.current.temperature_2m) + "°C";
+        // open-meteo returns current_weather.temperature for current_weather=true
+        var temp = null;
+        if (data.current_weather && data.current_weather.temperature != null) temp = data.current_weather.temperature;
+        // fallback to hourly temperature_2m latest value
+        if (temp == null && data.hourly && data.hourly.temperature_2m && data.hourly.temperature_2m.length) {
+          temp = data.hourly.temperature_2m[data.hourly.temperature_2m.length - 1];
+        }
+        if (temp != null) {
+          tempEl.textContent = Math.round(temp) + "°F";
         }
       })
       .catch(function () {
-        tempEl.textContent = "33°C";
+        tempEl.textContent = "90°F";
       });
   }
 

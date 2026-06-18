@@ -34,7 +34,7 @@
 }
 
 .hero__title-main {
-  font-family: var(--font-serif);
+  font-family: "LapidaryRoman", var(--font-serif);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;

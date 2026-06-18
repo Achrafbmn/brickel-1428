@@ -282,4 +282,17 @@
         });
     }
   });
+
+  // Header blur on scroll
+  (function headerScroll() {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    function onScroll() {
+      if (window.scrollY > 20) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // initialize
+    onScroll();
+  })();
 })();

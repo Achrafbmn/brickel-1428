@@ -72,6 +72,20 @@ h4 {
   height: var(--header-height);
   background: var(--white);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition),
+    backdrop-filter var(--transition);
+}
+
+/* Blurred translucent header when page is scrolled */
+.site-header.is-scrolled {
+  background: rgba(203, 185, 159, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .site-header__inner {

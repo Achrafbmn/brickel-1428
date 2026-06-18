@@ -402,6 +402,7 @@
   font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 2rem;
+  color: var(--white);
 }
 
 /* Inquire / form section */

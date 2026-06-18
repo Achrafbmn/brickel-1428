@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Residences at 1428 Brickell — luxury residences in the heart of Miami.">
+  <title>The Residences at 1428 Brickell</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+  <button class="accessibility-btn" type="button" aria-label="Accessibility options">♿</button>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__left">
+        <div class="site-header__social">
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+        <div class="weather-widget" id="weather-widget">
+          <span>Miami, US</span>
+          <span id="weather-time">—</span>
+          <span class="weather-widget__temp" id="weather-temp">—°C</span>
+        </div>
+      </div>
+      <a href="#" class="site-header__logo">
+        <span class="site-header__logo-top">The Residences at</span>
+        <span class="site-header__logo-main">1428 Brickell</span>
+      </a>
+      <div class="site-header__right">
+        <div class="site-header__contact">
+          <!-- Contact removed as requested -->
+        </div>
+        <a href="#inquire" class="btn btn--bronze">Inquire</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero" style="background-image: url('assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg');">
+      <div class="hero__content">
+        <p class="hero__title-top">The Residences at</p>
+        <h1 class="hero__title-main">1428 Brickell</h1>
+        <p class="hero__tagline">Designed for Visionaries, Built for Life.</p>
+        <div class="hero__actions">
+          <button type="button" class="btn btn--white" data-download="brochure">Download Brochure</button>
+          <button type="button" class="btn btn--white" data-download="fact-sheet">Download Fact Sheet</button>
+          <button type="button" class="btn btn--white" data-download="floor-plans">Download Floor Plans</button>
+        </div>
+      </div>
+      <span class="hero__scroll">Scroll</span>
+    </section>
+
+    <!-- Description -->
+    <section id="description" class="split-section">
+      <div class="split-section__media">
+        <img src="assets/images/6304a6336d2719a06386c76146882514-1200x1440.jpg" alt="1428 Brickell building entrance">
+      </div>
+      <div class="split-section__content split-section__content--right">
+        <h2 class="section-heading">Description of the Property</h2>
+        <p class="split-section__text">
+          Iconic architectural work in the heart of Miami, designed to merge luxury, art, and nature. With only 189 exclusive residences, it offers privacy, technological innovation, and unparalleled views of Biscayne Bay and the ocean, creating a refuge of wellness and sophistication in the most vibrant city in the world.
+        </p>
+        <button type="button" class="btn btn--bronze" data-download="fact-sheet">Download Fact Sheet</button>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section id="amenities" class="split-section">
+      <div class="split-section__content">
+        <h2 class="section-heading">Amenities</h2>
+        <ul class="amenities-list">
+          <li>Lobby with a snack bar and a private lounge for residents</li>
+          <li>Valet parking and a private entrance for residents</li>
+          <li>Guest suites by Antonio Citterio</li>
+          <li>Two pools, one on the 71st floor and another on the 11th floor</li>
+          <li>Tropical gardens and a private movie theater</li>
+          <li>State-of-the-art gym and wellness center</li>
+          <li>Private dining rooms and entertainment spaces</li>
+          <li>24-hour concierge and security services</li>
+        </ul>
+      </div>
+      <div class="split-section__media">
+        <img src="assets/images/aa90493eeb89ca803b22cdfaab9573eb-990x556.jpg" alt="Luxury lounge with ocean views">
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery-section">
+      <div class="gallery-section__hero">
+        <img src="assets/images/f31c744821ff30bbdaa0cb55cbbdbd67-990x660.jpg" alt="Balcony view at 1428 Brickell">
+        <div class="gallery-section__overlay">
+          <p class="gallery-section__overlay-top">Residences at</p>
+          <p class="gallery-section__overlay-main">1428 Brickell</p>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item--large">
+          <img src="assets/images/60168ce59cb6e95f99e37191ea58d620-990x556.jpg" alt="Pool area">
+          <figcaption class="gallery-caption">Pool area</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/d4839a0e34dc029e232546fe6e13f6ab-990x556.jpg" alt="Building facade">
+          <figcaption class="gallery-caption">Building facade</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/4a0fbfdf803d3e49e94cd18fbb2fd759-990x556.jpg" alt="Indoor garden lobby">
+          <figcaption class="gallery-caption">Indoor garden lobby</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/496798c13a7ef99d322bdd2c70fb5463-990x556.jpg" alt="Master bathroom">
+          <figcaption class="gallery-caption">Master bathroom</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/77882770e8a271b71d30d42ca7c38c08-990x556.jpg" alt="Dining room with ocean view">
+          <figcaption class="gallery-caption">Dining room</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/6c5d3c36e4bc4fda0d156b61f2ca6cb4-990x660.jpg" alt="Wellness deck">
+          <figcaption class="gallery-caption">Wellness deck</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/8106314d3468fdadf164f776ab1caa7c-990x659.jpg" alt="Modern kitchen">
+          <figcaption class="gallery-caption">Modern kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/d4839a0e34dc029e232546fe6e13f6ab-990x556 (1).jpg" alt="Building entrance">
+          <figcaption class="gallery-caption">Building entrance</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/1ce496952b9c6f89eeda8b288b2b8b3a-990x556.jpg" alt="Driveway and porte-cochère">
+          <figcaption class="gallery-caption">Driveway</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Excellence -->
+    <section id="excellence" class="excellence">
+      <div class="excellence__top">
+        <h2 class="excellence__headline">Living the Art of Excellence, in the Heart of Miami.</h2>
+        <div class="excellence__lines">
+          <p>An architectural work that combines art, innovation, and sustainability.</p>
+          <p>Exclusive residences with infinite views of the bay and the ocean.</p>
+          <p>A private sanctuary in the vibrant heart of the city.</p>
+        </div>
+      </div>
+      <div class="excellence__band" style="background-image: url('assets/images/d4839a0e34dc029e232546fe6e13f6ab-990x556.jpg');">
+        <div class="excellence__stats">
+          <div>
+            <p class="excellence__stat-value">Arquitectonica + ACPV Architects</p>
+            <p class="excellence__stat-label">Architect</p>
+          </div>
+          <div>
+            <p class="excellence__stat-value">Ytech</p>
+            <p class="excellence__stat-label">Developer</p>
+          </div>
+          <div>
+            <p class="excellence__stat-value">2027</p>
+            <p class="excellence__stat-label">Year Built</p>
+          </div>
+        </div>
+        <div class="excellence__curve" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Floor Plans -->
+    <section id="floor-plans" class="floor-plans">
+      <h2 class="section-heading">Floor Plans</h2>
+      <div class="floor-plans__grid">
+        <img src="assets/images/60168ce59cb6e95f99e37191ea58d620-990x556.jpg" alt="Floor plan level 1">
+        <img src="assets/images/4a0fbfdf803d3e49e94cd18fbb2fd759-990x556.jpg" alt="Floor plan level 2">
+        <img src="assets/images/496798c13a7ef99d322bdd2c70fb5463-990x556.jpg" alt="Floor plan level 3">
+      </div>
+      <button type="button" class="btn btn--bronze" data-download="floor-plans">Download Floor Plans</button>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="hero-banner" style="background-image: url('assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg');">
+      <div class="hero-banner__content">
+        <h2 class="hero-banner__title">Prices Starting at $4.15M</h2>
+        <button type="button" class="btn btn--bronze" data-download="price-sheet">Download Price Sheet</button>
+      </div>
+    </section>
+
+    <!-- Inquire -->
+    <section id="inquire" class="inquire-section" style="background-image: url('assets/images/6304a6336d2719a06386c76146882514-1200x1440.jpg');">
+      <div class="inquire-section__inner">
+        <div class="inquire-section__left">
+          <h2 class="section-heading">Deposit Schedule</h2>
+          <ul class="deposit-list">
+            <li>20% upon signing the contract</li>
+            <li>10% at the start of construction (Groundbreaking)</li>
+            <li>10% upon reaching the "Top-Off" (upper structure)</li>
+            <li>60% at closing</li>
+          </ul>
+        </div>
+        <div class="inquire-section__right">
+          <form class="inquiry-form" id="inquiry-form" novalidate>
+            <div class="form-success" id="form-success" role="alert">
+              Thank you! Your inquiry has been received. We will contact you shortly.
+            </div>
+            <h3 class="inquiry-form__title">1428 BRICKELL</h3>
+            <p class="inquiry-form__subtitle">Inquire Now</p>
+            <p class="inquiry-form__intro">Please fill the form below and we'll contact you shortly.</p>
+
+            <div class="form-group" id="group-type">
+              <span class="form-label">Select an option *</span>
+              <div class="radio-group">
+                <label><input type="radio" name="type" value="buyer" required aria-required="true"> Buyer</label>
+                <label><input type="radio" name="type" value="realtor"> Realtor</label>
+              </div>
+              <span class="form-error" id="error-type"></span>
+            </div>
+
+            <div class="form-group" id="group-firstName">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="First Name *" required aria-required="true">
+              <span class="form-error" id="error-firstName"></span>
+            </div>
+
+            <div class="form-group" id="group-lastName">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name *" required aria-required="true">
+              <span class="form-error" id="error-lastName"></span>
+            </div>
+
+            <div class="form-group" id="group-email">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="Email *" required aria-required="true">
+              <span class="form-error" id="error-email"></span>
+            </div>
+
+            <div class="form-group" id="group-phone">
+              <label for="phone">Phone Number *</label>
+              <div class="phone-group">
+                <select id="countryCode" name="countryCode" aria-label="Country code">
+                  <option value="" disabled selected>Select country</option>
+                </select>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number *" required aria-required="true">
+              </div>
+              <span class="form-error" id="error-phone"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="comments">Comments</label>
+              <textarea id="comments" name="comments" placeholder="Comments"></textarea>
+            </div>
+
+            <div class="form-group" id="group-consent">
+              <label class="form-consent">
+                <input type="checkbox" id="consent" name="consent" required aria-required="true">
+                <span>By submitting this form, you agree to be contacted regarding 1428 Brickell. See our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</span>
+              </label>
+              <span class="form-error" id="error-consent"></span>
+            </div>
+
+            <p class="form-required-note">* Required Fields</p>
+            <button type="submit" class="btn btn--bronze">Submit Information</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section id="map-section" class="map-section">
+      <div id="map"></div>
+      <p class="map-hint">Use ctrl + scroll to zoom the map</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__brand-top">The Residences at</p>
+    <p class="site-footer__brand-main">1428 Brickell</p>
+    <div class="site-footer__row">
+      <div class="site-footer__contact">
+        <p>2071 NW, 112th Ave. Suite 101, Miami, FL 33172</p>
+      </div>
+      <div class="site-footer__social">
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+    <p class="site-footer__disclaimer">
+      The information provided on this website is for general informational purposes only. All information is provided in good faith; however, we make no representation or warranty of any kind regarding the accuracy, adequacy, validity, reliability, or completeness of any information. Equal Housing Opportunity. Licensed Real Estate Broker. Prices, availability, and specifications are subject to change without notice.
+    </p>
+    <div class="site-footer__bottom">
+      <p class="site-footer__links">
+        <a href="#">Terms &amp; Conditions</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Accessibility</a> |
+        © 2026 All Rights Reserved
+      </p>
+      <p class="site-footer__credits"><strong>TREMGROUP</strong> Powered by The Real Estate Marketing Group</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

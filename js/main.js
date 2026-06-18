@@ -260,8 +260,22 @@
             }
             form.reset();
           } else {
-            var msg = (result.data && result.data.error) ? result.data.error : 'Submission failed. Please try again later.';
-            alert(msg);
+            // Show detailed error message for debugging (server returns `error` and `details`)
+            var errMsg = 'Submission failed.';
+            if (result.data) {
+              if (result.data.error) errMsg = result.data.error;
+              if (result.data.details) {
+                try {
+                  var d = result.data.details;
+                  // If details has a message field, append it
+                  if (d.message) errMsg += ' ' + d.message;
+                  else errMsg += ' ' + JSON.stringify(d);
+                } catch (e) {
+                  errMsg += ' (could not parse error details)';
+                }
+              }
+            }
+            alert(errMsg);
           }
         })
         .catch(function () {

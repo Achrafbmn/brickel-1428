@@ -39,6 +39,7 @@ export default async function handler(req, res) {
   const auth = 'Basic ' + Buffer.from(apiKey + ':').toString('base64');
 
   try {
+    console.log('FUB request payload:', payload);
     // Create or update person in Follow Up Boss
     const resp = await fetch('https://api.followupboss.com/v1/people', {
       method: 'POST',
@@ -50,6 +51,8 @@ export default async function handler(req, res) {
     });
 
     const data = await resp.json().catch(() => ({}));
+    console.log('FUB response status:', resp.status);
+    console.log('FUB response body:', data);
 
     if (!resp.ok) {
       return res.status(resp.status).json({ error: 'FUB API error', details: data });

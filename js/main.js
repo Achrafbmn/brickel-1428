@@ -310,4 +310,27 @@
     // initialize
     onScroll();
   })();
+
+  // Reveal-on-scroll: add .reveal to major sections and observe visibility
+  (function revealOnScroll() {
+    var selectors = ['section', '.split-section__content', '.gallery-grid figure', '.hero__content', '.excellence__stats', '.inquiry-form', '.floor-plans__grid img'];
+    var elements = [];
+    selectors.forEach(function(s) {
+      document.querySelectorAll(s).forEach(function(el) { elements.push(el); });
+    });
+    // Deduplicate
+    elements = elements.filter(function(el, idx) { return elements.indexOf(el) === idx; });
+    elements.forEach(function(el) { el.classList.add('reveal'); });
+
+    var io = new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  })();
 })();

@@ -31,7 +31,7 @@ Then visit `http://localhost:3000` (or the port shown).
 
 ## Map
 
-Uses [Leaflet](https://leafletjs.com/) with CartoDB Dark Matter tiles. No API key required. Center: 1428 Brickell Ave, Miami, FL.
+Uses [Leaflet](https://leafletjs.com/) with CartoDB Dark Matter tiles. No API key required. Center: 1428 BRICKELL — 2071 NW, 112th Ave. Suite 101, Miami, FL 33172.
 
 ## Weather widget
 

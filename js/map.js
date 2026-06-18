@@ -28,7 +28,7 @@
   var marker = L.marker([lat, lng], { icon: bronzeIcon }).addTo(map);
 
   marker.bindPopup(
-    '<div class="map-popup">1428 Brickell Ave Miami, FL<br>33131</div>',
+    '<div class="map-popup"><strong>1428 BRICKELL</strong><br>2071 NW, 112th Ave. Suite 101<br>Miami, FL 33172</div>',
     { closeButton: false, offset: [0, -20] }
   ).openPopup();
 

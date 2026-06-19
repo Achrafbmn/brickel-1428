@@ -26,7 +26,7 @@
 }
 
 .hero__title-top {
-  font-family: "LapidaryRoman", var(--font-serif);
+  font-family: didone, serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -34,8 +34,8 @@
 }
 
 .hero__title-main {
-  font-family: "LapidaryRoman", var(--font-serif);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-family: arial;
+  font-size: clamp(1rem, 3vw, 4rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -48,7 +48,7 @@
 }
 
 .hero__tagline {
-  font-family: "LapidaryRoman", var(--font-serif);
+  font-family: didone, serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-style: italic;
   margin-bottom: 2.5rem;

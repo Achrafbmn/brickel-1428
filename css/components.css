@@ -366,12 +366,30 @@ h4 {
     grid-template-columns: auto 1fr auto;
   }
 
+  .site-header {
+    height: 64px;
+  }
+
+  /* show weather and social on mobile but make them compact */
   .weather-widget {
-    display: none;
+    display: flex;
+    font-size: 0.66rem;
+    padding: 0.18rem 0.6rem;
+    max-width: 200px;
+    gap: 0.45rem;
   }
 
   .site-header__social {
-    display: none;
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .site-header__logo-top {
+    font-size: 0.6rem;
+  }
+
+  .site-header__logo-main {
+    font-size: 0.95rem;
   }
 }
 

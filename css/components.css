@@ -393,6 +393,37 @@ h4 {
   }
 }
 
+/* Mobile: hide left header group (weather + small icons) to give space
+   for the centered site title and the right-side inquire button */
+@media (max-width: 480px) {
+  .site-header__left {
+    display: none !important;
+  }
+
+  .site-header__inner {
+    grid-template-columns: 1fr auto;
+    padding: 0 0.9rem;
+    align-items: center;
+  }
+
+  .site-header {
+    height: 56px;
+  }
+
+  .site-header__logo-main {
+    font-size: 1.05rem;
+  }
+
+  .site-header__right {
+    gap: 0.5rem;
+  }
+
+  .site-header__right .btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* Reveal on scroll animation */
 .reveal {
   opacity: 0;

@@ -285,6 +285,7 @@
   .hero__content {
     padding: 1rem;
     max-width: 90%;
+    margin-top: 0.6rem;
   }
 
   .hero__title-top {

@@ -3,64 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luxury residences at 1428 Brickell — exclusive condos in Miami with panoramic bay views. Contact us for floor plans and availability.">
-  <meta name="keywords" content="1428 Brickell, Miami real estate, luxury condos, Brickell residences, new development, Miami condos, waterfront property">
+  <meta name="description" content="Luxury residences at 1428 Brickell — exclusive condos in Miami with panoramic bay views.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://1428brickell.com/">
-  <meta name="geo.placename" content="Miami">
-  <meta name="geo.region" content="US-FL">
-  <meta name="geo.position" content="25.7584;-80.1920">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="1428 Brickell - Luxury Residences">
-  <meta property="og:description" content="Exclusive residences at 1428 Brickell. Contact us for floor plans, brochures and availability.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://1428brickell.com/">
-  <meta property="og:image" content="https://1428brickell.com/assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="1428 Brickell - Luxury Residences">
-  <meta name="twitter:description" content="Exclusive residences at 1428 Brickell. Contact us for floor plans, brochures and availability.">
-  <meta name="twitter:image" content="https://1428brickell.com/assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="alternate" href="https://1428brickell.com/" hreflang="en-us">
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/Background4.jpg">
+
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "1428 Brickell",
-    "description": "Luxury residences at 1428 Brickell — exclusive condos in Miami with panoramic bay views.",
-    "url": "https://1428brickell.com/",
-    "image": ["https://1428brickell.com/assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg"],
-    "brand": { "@type": "Organization", "name": "Ytech" },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "2071 NW, 112th Ave. Suite 101",
-      "addressLocality": "Miami",
-      "addressRegion": "FL",
-      "postalCode": "33172",
-      "addressCountry": "US"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 25.7584, "longitude": -80.1920 }
-  }
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"1428 Brickell","image":["https://1428brickell.com/assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg"],"@id":"https://1428brickell.com/","url":"https://1428brickell.com/","telephone":"+1-305-555-0100","address":{"@type":"PostalAddress","streetAddress":"2071 NW, 112th Ave. Suite 101","addressLocality":"Miami","addressRegion":"FL","postalCode":"33172","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":25.7584,"longitude":-80.192},"sameAs":["https://www.instagram.com/","https://www.youtube.com/"]}
   </script>
 </head>
 <body>
+  <h1 class="visually-hidden">1428 Brickell — Luxury Residences in Miami</h1>
   <div class="top-banner">UNDER CONSTRUCTION. GOING VERTICAL. FINANCED BY J.P. MORGAN.</div>
   <button class="accessibility-btn" type="button" aria-label="Accessibility options">♿</button>
 
   <header class="site-header">
     <div class="site-header__inner">
       <div class="site-header__left">
-        <div class="site-header__social">
-          <a href="#" aria-label="YouTube">▶</a>
-          <a href="#" aria-label="Instagram">◎</a>
-        </div>
+        <div class="site-header__social"></div>
         <div class="weather-widget" id="weather-widget">
           <span>Miami, FL</span>
           <span id="weather-time">—</span>
@@ -72,45 +40,53 @@
         <span class="site-header__logo-main">1428 Brickell</span>
       </a>
       <div class="site-header__right">
-        <div class="site-header__contact">
-          <!-- Contact removed as requested -->
-        </div>
+        <nav class="site-nav" aria-label="Main menu">
+          <button class="site-nav__trigger" aria-haspopup="true" aria-controls="site-nav-menu" aria-expanded="false">Menu ▾</button>
+          <ul class="site-nav__menu" id="site-nav-menu">
+            <li class="site-nav__item"><a href="#hero">Home</a></li>
+            <li class="site-nav__item"><a href="#description">Description</a></li>
+            <li class="site-nav__item"><a href="#amenities">Amenities</a></li>
+            <li class="site-nav__item"><a href="#gallery">Gallery</a></li>
+            <li class="site-nav__item"><a href="#excellence">Excellence</a></li>
+            <li class="site-nav__item"><a href="#floor-plans">Floor Plans</a></li>
+            <li class="site-nav__item"><a href="#pricing">Pricing</a></li>
+            <li class="site-nav__item"><a href="#inquire">Inquire</a></li>
+            <li class="site-nav__item"><a href="#map">Map</a></li>
+          </ul>
+        </nav>
         <a href="#inquire" class="btn btn--bronze">Inquire</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section id="hero" class="hero hero--no-overlay" style="background-image: url('assets/images/Dein Abschnittstext.png');">
-        <div class="hero__content"> 
-        <!--<p class="hero__title-top">The Residences at</p>
-        <h1 class="hero__title-main"> 1428 Brickell</h1>
-        <p class="hero__tagline">Designed for Visionaries, Built for Life.</p>-->
+    <section id="hero" class="hero hero--no-overlay">
+      <div class="hero-slideshow" aria-hidden="true">
+        <div class="hero-slide" style="background-image: url('assets/images/Background4.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/Background2.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/Background3.jpg')"></div>
+      </div>
+
+      <div class="hero__content">
         <div class="hero__actions">
-          <button type="button" class="btn btn--white" style="margin-top: 10CM;" data-download="brochure">Download Brochure</button>
-          <button type="button" class="btn btn--white" style="margin-top: 10CM;" data-download="fact-sheet">Download Fact Sheet</button>
-          <button type="button" class="btn btn--white" style="margin-top: 10CM;" data-download="floor-plans">Download Floor Plans</button>
+          <button type="button" class="btn btn--white" style="margin-top: 10cm; color: #000;" data-download="brochure">Download Brochure</button>
+          <button type="button" class="btn btn--white" style="margin-top: 10cm; color: #000;" data-download="fact-sheet">Download Fact Sheet</button>
+          <button type="button" class="btn btn--white" style="margin-top: 10cm; color: #000;" data-download="floor-plans">Download Floor Plans</button>
         </div>
       </div>
-      <!--<span class="hero__scroll">Scroll</span>-->
     </section>
 
-    <!-- Description -->
     <section id="description" class="split-section">
       <div class="split-section__media">
-        <img src="assets/images/6304a6336d2719a06386c76146882514-1200x1440.jpg" alt="1428 Brickell building entrance">
+        <img loading="lazy" src="assets/images/INT21_Unit G Balcony_E11a 10000px.jpg" alt="1428 Brickell building entrance">
       </div>
       <div class="split-section__content split-section__content--right">
         <h2 class="section-heading">Description of the Property</h2>
-        <p class="split-section__text">
-          Iconic architectural work in the heart of Miami, designed to merge luxury, art, and nature. With only 189 exclusive residences, it offers privacy, technological innovation, and unparalleled views of Biscayne Bay and the ocean, creating a refuge of wellness and sophistication in the most vibrant city in the world.
-        </p>
+        <p class="split-section__text">Iconic architectural work in the heart of Miami, designed to merge luxury, art, and nature. With only 189 exclusive residences, it offers privacy, technological innovation, and unparalleled views of Biscayne Bay and the ocean.</p>
         <button type="button" class="btn btn--bronze" data-download="fact-sheet">Download Fact Sheet</button>
       </div>
     </section>
-
-    <!-- Amenities -->
+    
     <section id="amenities" class="split-section">
       <div class="split-section__content">
         <h2 class="section-heading">Amenities</h2>
@@ -130,10 +106,10 @@
       </div>
     </section>
 
-    <!-- Gallery -->
+    
     <section id="gallery" class="gallery-section">
       <div class="gallery-section__hero">
-        <img src="assets/images/f31c744821ff30bbdaa0cb55cbbdbd67-990x660.jpg" alt="Balcony view at 1428 Brickell">
+        <img loading="lazy" src="assets/images/background4.jpg" alt="Balcony view at 1428 Brickell">
         <div class="gallery-section__overlay">
           <p class="gallery-section__overlay-top">Residences at</p>
           <p class="gallery-section__overlay-main">1428 Brickell</p>
@@ -141,45 +117,45 @@
       </div>
       <div class="gallery-grid">
         <figure class="gallery-item gallery-item--large">
-          <img src="assets/images/60168ce59cb6e95f99e37191ea58d620-990x556.jpg" alt="Pool area">
+          <img loading="lazy" src="assets/images/PIC15.jpg" alt="Balcony view">
+          <figcaption class="gallery-caption">Balcony view</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" src="assets/images/4a0fbfdf803d3e49e94cd18fbb2fd759-990x556.jpg" alt="Pool area">
           <figcaption class="gallery-caption">Pool area</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/d4839a0e34dc029e232546fe6e13f6ab-990x556.jpg" alt="Building facade">
+          <img loading="lazy" src="assets/images/496798c13a7ef99d322bdd2c70fb5463-990x556.jpg" alt="Building facade">
           <figcaption class="gallery-caption">Building facade</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/4a0fbfdf803d3e49e94cd18fbb2fd759-990x556.jpg" alt="Indoor garden lobby">
+          <img loading="lazy" src="assets/images/aa90493eeb89ca803b22cdfaab9573eb-990x556.jpg" alt="Indoor garden lobby">
           <figcaption class="gallery-caption">Indoor garden lobby</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/496798c13a7ef99d322bdd2c70fb5463-990x556.jpg" alt="Master bathroom">
+          <img loading="lazy" src="assets/images/60168ce59cb6e95f99e37191ea58d620-990x556.jpg" alt="Master bathroom">
           <figcaption class="gallery-caption">Master bathroom</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/77882770e8a271b71d30d42ca7c38c08-990x556.jpg" alt="Dining room with ocean view">
+          <img loading="lazy" src="assets/images/1ce496952b9c6f89eeda8b288b2b8b3a-990x556.jpg" alt="Dining room with ocean view">
           <figcaption class="gallery-caption">Dining room</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/6c5d3c36e4bc4fda0d156b61f2ca6cb4-990x660.jpg" alt="Wellness deck">
+          <img loading="lazy" src="assets/images/PIC2.jpg" alt="Wellness deck">
           <figcaption class="gallery-caption">Wellness deck</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="assets/images/8106314d3468fdadf164f776ab1caa7c-990x659.jpg" alt="Modern kitchen">
-          <figcaption class="gallery-caption">Modern kitchen</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/images/d4839a0e34dc029e232546fe6e13f6ab-990x556 (1).jpg" alt="Building entrance">
-          <figcaption class="gallery-caption">Building entrance</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/images/1ce496952b9c6f89eeda8b288b2b8b3a-990x556.jpg" alt="Driveway and porte-cochère">
+          <img loading="lazy" src="assets/images/PIC13.jpg" alt="Driveway and porte-cochère">
           <figcaption class="gallery-caption">Driveway</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" src="assets/images/77882770e8a271b71d30d42ca7c38c08-990x556.jpg" alt="Driveway and porte-cochère">
+          <figcaption class="gallery-caption">Kitchen</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Excellence -->
+    
     <section id="excellence" class="excellence">
       <div class="excellence__top">
         <h2 class="excellence__headline">Living the Art of Excellence, in the Heart of Miami.</h2>
@@ -208,26 +184,26 @@
       </div>
     </section>
 
-    <!-- Floor Plans -->
+    
     <section id="floor-plans" class="floor-plans">
       <h2 class="section-heading">Floor Plans</h2>
       <div class="floor-plans__grid">
-        <img src="assets/images/60168ce59cb6e95f99e37191ea58d620-990x556.jpg" alt="Floor plan level 1">
-        <img src="assets/images/4a0fbfdf803d3e49e94cd18fbb2fd759-990x556.jpg" alt="Floor plan level 2">
-        <img src="assets/images/496798c13a7ef99d322bdd2c70fb5463-990x556.jpg" alt="Floor plan level 3">
+          <img loading="lazy" src="assets/images/60168ce59cb6e95f99e37191ea58d620-990x556.jpg" alt="Floor plan level 1">
+          <img loading="lazy" src="assets/images/4a0fbfdf803d3e49e94cd18fbb2fd759-990x556.jpg" alt="Floor plan level 2">
+          <img loading="lazy" src="assets/images/496798c13a7ef99d322bdd2c70fb5463-990x556.jpg" alt="Floor plan level 3">
       </div>
       <button type="button" class="btn btn--bronze" data-download="floor-plans">Download Floor Plans</button>
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="hero-banner" style="background-image: url('assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg');">
+    
+    <section id="pricing" class="hero-banner" style="background-image: url('assets/images/PIC12.jpg');">
       <div class="hero-banner__content">
         <h2 class="hero-banner__title">Prices Starting at $3.8M</h2>
       </div>
     </section>
 
-    <!-- Inquire -->
-    <section id="inquire" class="inquire-section" style="background-image: url('assets/images/6304a6336d2719a06386c76146882514-1200x1440.jpg');">
+    
+    <section id="inquire" class="inquire-section" style="background-image: url('assets/images/PIC13.jpg');">
       <div class="inquire-section__inner">
         <div class="inquire-section__left">
           <h2 class="section-heading">Deposit Schedule</h2>
@@ -304,7 +280,7 @@
       </div>
     </section>
 
-    <!-- Map -->
+    
     <section id="map-section" class="map-section">
       <div id="map"></div>
       <p class="map-hint">Use ctrl + scroll to zoom the map</p>

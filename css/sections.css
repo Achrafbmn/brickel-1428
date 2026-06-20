@@ -16,12 +16,60 @@
   position: absolute;
   inset: 0;
   background: var(--overlay);
+  z-index: 0;
 }
 
 /* When the hero image already contains its own text, reduce the overlay
    so image text stays bright/white. Use a light overlay to keep contrast. */
 .hero.hero--no-overlay::before {
   background: rgba(0, 0, 0, 0.12);
+}
+
+/* Simple CSS slideshow: three stacked slides that fade in/out every 2s
+   Total cycle: 6s. Each slide uses the same keyframes with a staggered delay. */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: -3; /* behind content but above background */
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  animation: heroCrossfade 6s linear infinite;
+}
+.hero-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.hero-slide:nth-child(2) {
+  animation-delay: 2s;
+}
+.hero-slide:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes heroCrossfade {
+  0% {
+    opacity: 0;
+  }
+  8.333% {
+    opacity: 1;
+  }
+  33.333% {
+    opacity: 1;
+  }
+  41.666% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .hero__content {
@@ -31,7 +79,7 @@
   max-width: 900px;
 }
 
-.hero__title-top {
+/*.hero__title-top {
   font-family: Calibri Light;
   font-style: Calibri Light;
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -48,22 +96,22 @@
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   text-color: #f5fffa;
-}
+}*/
 
-/* Ensure large site name text is white for visibility */
+/* Ensure large site name text is white for visibility 
 .hero__title-main,
 .gallery-section__overlay-main {
   color: var(--white);
-}
+}*/
 
-.hero__tagline {
+/*.hero__tagline {
   font-family: Calibri Light;
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-style: Calibri Light;
   margin-bottom: 2.5rem;
   opacity: 0.95;
   text-color: #f5fffa;
-}
+}*/
 
 .hero__actions {
   display: flex;
@@ -72,24 +120,27 @@
   justify-content: center;
 }
 
-.hero__scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--white);
-  opacity: 0.8;
-}
-
 /* Split sections */
 .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 70vh;
+}
+
+@media (max-width: 900px) {
+  .split-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .split-section__media {
+    order: 2;
+    min-height: 280px;
+  }
+  .split-section__content {
+    order: 1;
+    padding: var(--section-padding) 1rem;
+    text-align: left;
+  }
 }
 
 .split-section__media {
@@ -222,9 +273,15 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Hint to browser to promote this element to its own compositor layer
+     and use GPU-accelerated transforms to avoid main-thread repaints */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0) scale(1);
   transition:
-    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
-    filter 0.3s;
+    transform 0.35s ease-out,
+    opacity 0.25s ease-out;
 }
 
 .gallery-item--large {
@@ -253,7 +310,8 @@
 }
 
 .gallery-item:hover img {
-  transform: scale(1.08);
+  /* Use a more modest scale and faster transition for smoother feel */
+  transform: translateZ(0) scale(1.04);
 }
 .gallery-item:hover .gallery-caption {
   opacity: 1;

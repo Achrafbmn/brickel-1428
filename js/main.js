@@ -333,4 +333,35 @@
 
     document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
   })();
+
+  // Header nav toggle for touch/keyboard accessibility
+  (function headerNavToggle(){
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.site-nav__trigger');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var open = nav.classList.toggle('site-nav--open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e){
+      if (!nav.contains(e.target)) {
+        nav.classList.remove('site-nav--open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') {
+        nav.classList.remove('site-nav--open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
 })();

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxury residences at 1428 Brickell — exclusive condos in Miami with panoramic bay views.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://1428brickell.com/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/Background4.jpg">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"1428 Brickell","image":["https://1428brickell.com/assets/images/5413e570b3b1854615cbfcc8b856480a-2048x960.jpg"],"@id":"https://1428brickell.com/","url":"https://1428brickell.com/","telephone":"+1-305-555-0100","address":{"@type":"PostalAddress","streetAddress":"2071 NW, 112th Ave. Suite 101","addressLocality":"Miami","addressRegion":"FL","postalCode":"33172","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":25.7584,"longitude":-80.192},"sameAs":["https://www.instagram.com/","https://www.youtube.com/"]}
+  </script>
+</head>
+<body>
+  <h1 class="visually-hidden">1428 Brickell — Luxury Residences in Miami</h1>
+  <div class="top-banner">UNDER CONSTRUCTION. GOING VERTICAL. FINANCED BY J.P. MORGAN.</div>
+  <button class="accessibility-btn" type="button" aria-label="Accessibility options">♿</button>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__left">
+        <div class="site-header__social"></div>
+        <div class="weather-widget" id="weather-widget">
+          <span>Miami, FL</span>
+          <span id="weather-time">—</span>
+          <span class="weather-widget__temp" id="weather-temp">—°F</span>
+        </div>
+      </div>
+      <a href="#" class="site-header__logo">
+        <span class="site-header__logo-top">The Residences at</span>
+        <span class="site-header__logo-main">1428 Brickell</span>
+      </a>
+      <div class="site-header__right">
+        <nav class="site-nav" aria-label="Main menu">
+          <button class="site-nav__trigger" aria-haspopup="true" aria-controls="site-nav-menu" aria-expanded="false">Menu ▾</button>
+          <ul class="site-nav__menu" id="site-nav-menu">
+            <li class="site-nav__item"><a href="#hero">Home</a></li>
+            <li class="site-nav__item"><a href="#description">Description</a></li>
+            <li class="site-nav__item"><a href="#amenities">Amenities</a></li>
+            <li class="site-nav__item"><a href="#gallery">Gallery</a></li>
+            <li class="site-nav__item"><a href="#excellence">Excellence</a></li>
+            <li class="site-nav__item"><a href="#floor-plans">Floor Plans</a></li>
+            <li class="site-nav__item"><a href="#pricing">Pricing</a></li>
+            <li class="site-nav__item"><a href="#inquire">Inquire</a></li>
+            <li class="site-nav__item"><a href="#map">Map</a></li>
+          </ul>
+        </nav>
+        <a href="#inquire" class="btn btn--bronze">Inquire</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero hero--no-overlay">
+      <div class="hero-slideshow" aria-hidden="true">
+        <div class="hero-slide" style="background-image: url('assets/images/Background4.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/Background2.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/Background3.jpg')"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__actions">
+          <button type="button" class="btn btn--white hero-download" data-download="brochure">Download Brochure</button>
+          <button type="button" class="btn btn--white hero-download" data-download="fact-sheet">Download Fact Sheet</button>
+          <button type="button" class="btn btn--white hero-download" data-download="floor-plans">Download Floor Plans</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="description" class="split-section">
+      <div class="split-section__media">
+        <img loading="lazy" src="assets/images/INT21_Unit G Balcony_E11a 10000px.jpg" alt="1428 Brickell building entrance">
+      </div>
+      <div class="split-section__content split-section__content--right">
+        <h2 class="section-heading">Description of the Property</h2>
+        <p class="split-section__text">Iconic architectural work in the heart of Miami, designed to merge luxury, art, and nature. With only 189 exclusive residences, it offers privacy, technological innovation, and unparalleled views of Biscayne Bay and the ocean.</p>
+        <button type="button" class="btn btn--bronze" data-download="fact-sheet">Download Fact Sheet</button>
+      </div>
+    </section>
+    
+    <!-- content omitted for brevity in backup -->
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__brand-top">The Residences at</p>
+    <p class="site-footer__brand-main">1428 Brickell</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/map.js" defer></script>
+</body>
+</html>

@@ -155,6 +155,7 @@
   object-fit: cover;
   position: absolute;
   inset: 0;
+  aspect-ratio: 16/10;
 }
 
 .split-section__content {
@@ -282,6 +283,7 @@
   transition:
     transform 0.35s ease-out,
     opacity 0.25s ease-out;
+  aspect-ratio: 16/9;
 }
 
 .gallery-item--large {

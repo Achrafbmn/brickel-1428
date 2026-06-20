@@ -100,7 +100,9 @@
   }
 
   updateClock();
-  fetchWeather();
+  // Delay weather fetch to idle time to avoid blocking content paint
+  if ('requestIdleCallback' in window) requestIdleCallback(fetchWeather, {timeout:2000});
+  else setTimeout(fetchWeather, 1500);
   setInterval(updateClock, 60000);
 
   // Populate country select with flags and dialing codes
@@ -332,6 +334,39 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  })();
+
+  // Lazy-load background images specified in `data-bg` attributes
+  (function lazyBackgrounds(){
+    var bgSelectors = '[data-bg]';
+    var elems = Array.prototype.slice.call(document.querySelectorAll(bgSelectors));
+    if (!elems.length) return;
+
+    // Preload first hero image for LCP: set immediately for first .hero-slide
+    var firstHero = document.querySelector('.hero-slide[data-bg]');
+    if (firstHero) {
+      firstHero.style.backgroundImage = 'url(' + firstHero.getAttribute('data-bg') + ')';
+    }
+
+    var io = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var src = el.getAttribute('data-bg');
+          if (src) {
+            el.style.backgroundImage = 'url(' + src + ')';
+            el.removeAttribute('data-bg');
+          }
+          obs.unobserve(el);
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+
+    elems.forEach(function(el){
+      // If already has inline style, skip
+      if (el.style && el.style.backgroundImage) return;
+      io.observe(el);
+    });
   })();
 
   // Header nav toggle for touch/keyboard accessibility

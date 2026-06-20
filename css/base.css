@@ -80,7 +80,7 @@ h4 {
 }
 
 .section-heading {
-  font-family: var(--font-serif);
+  font-family: var(arial);
   font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;

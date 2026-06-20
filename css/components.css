@@ -157,7 +157,7 @@ h4 {
 
 .site-header__logo-top {
   display: block;
-  font-family: "lapidaryroman";
+  font-family: "Eras Light ITC";
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -167,10 +167,10 @@ h4 {
 
 .site-header__logo-main {
   display: block;
-  font-family: arial;
+  font-family: "Eras Light ITC";
   font-size: 1.5rem;
   font-weight: 300;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--bronze);
 }

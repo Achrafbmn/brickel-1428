@@ -324,11 +324,33 @@
     elements = elements.filter(function(el, idx) { return elements.indexOf(el) === idx; });
     elements.forEach(function(el) { el.classList.add('reveal'); });
 
+    // Delay visibility by 1 second after element becomes visible.
+    var revealTimers = new WeakMap();
     var io = new IntersectionObserver(function(entries, obs) {
       entries.forEach(function(entry) {
+        var el = entry.target;
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
+          // If already visible, ensure we don't re-add or retrigger
+          if (el.classList.contains('is-visible')) {
+            obs.unobserve(el);
+            return;
+          }
+          // Start a 1s timer to reveal the element
+          if (!revealTimers.has(el)) {
+            var timer = setTimeout(function() {
+              el.classList.add('is-visible');
+              obs.unobserve(el);
+              revealTimers.delete(el);
+            }, 1000);
+            revealTimers.set(el, timer);
+          }
+        } else {
+          // If the element left the viewport before timer fired, cancel the reveal
+          var pending = revealTimers.get(el);
+          if (pending) {
+            clearTimeout(pending);
+            revealTimers.delete(el);
+          }
         }
       });
     }, { threshold: 0.12 });
@@ -336,38 +358,7 @@
     document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
   })();
 
-  // Lazy-load background images specified in `data-bg` attributes
-  (function lazyBackgrounds(){
-    var bgSelectors = '[data-bg]';
-    var elems = Array.prototype.slice.call(document.querySelectorAll(bgSelectors));
-    if (!elems.length) return;
-
-    // Preload first hero image for LCP: set immediately for first .hero-slide
-    var firstHero = document.querySelector('.hero-slide[data-bg]');
-    if (firstHero) {
-      firstHero.style.backgroundImage = 'url(' + firstHero.getAttribute('data-bg') + ')';
-    }
-
-    var io = new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var src = el.getAttribute('data-bg');
-          if (src) {
-            el.style.backgroundImage = 'url(' + src + ')';
-            el.removeAttribute('data-bg');
-          }
-          obs.unobserve(el);
-        }
-      });
-    }, { rootMargin: '300px 0px' });
-
-    elems.forEach(function(el){
-      // If already has inline style, skip
-      if (el.style && el.style.backgroundImage) return;
-      io.observe(el);
-    });
-  })();
+  // Backgrounds are loaded statically; lazy background loader removed.
 
   // Header nav toggle for touch/keyboard accessibility
   (function headerNavToggle(){
